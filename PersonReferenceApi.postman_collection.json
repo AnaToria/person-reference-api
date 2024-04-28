@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "09a1153a-17b6-4d9c-9e2a-ac0534d030f8",
+		"name": "PersonReferenceApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21649753",
+		"_collection_link": "https://cloudy-station-238659.postman.co/workspace/My-Workspace~bbf91ae4-66d4-4b77-8db8-411e446f0fe6/collection/21649753-09a1153a-17b6-4d9c-9e2a-ac0534d030f8?action=share&source=collection_link&creator=21649753"
+	},
+	"item": [
+		{
+			"name": "Add Person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ka",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Eka\",\n  \"surname\": \"Lomidze\",\n  \"gender\": \"Female\",\n  \"pin\": \"88111234567\",\n  \"birthDate\": \"1988-11-12\",\n  \"cityId\": 10,\n  \"image\": \"396b5b6c-1223-41ed-82b8-56dd575ec2f9temp.jpeg\",\n  \"phoneNumbers\": [\n    {\n        \"type\": \"Home\",\n        \"number\": \"5678901234\"\n    },\n    {\n        \"type\": \"Mobile\",\n        \"number\": \"5432109876\"\n    },\n    {\n        \"type\": \"Office\",\n        \"number\": \"210987\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"გიორგი\",\n  \"surname\": \"ანდრიაძე\",\n  \"gender\": \"Male\",\n  \"pin\": \"50347856321\",\n  \"birthDate\": \"2002-04-27\",\n  \"cityId\": 48,\n  \"image\":\"asdjahsdksadh.jpeg\",\n  \"phoneNumbers\": [\n    {\n      \"type\": \"Mobile\",\n      \"number\": \"599415838\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Persons",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"\",\n    \"surname\": \"\",\n    \"gender\": \"Female\",\n    \"pin\": \"456\",\n    \"birthDateFrom\": \"1980-04-27\",\n    \"birthDateTo\": \"1998-04-27\",\n    \"cityId\": null,\n    \"pageNumber\": 1,\n    \"pageSize\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll (with search text)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchText\": \"ილი\",\n    \"pageNumber\": 1,\n    \"pageSize\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePerson",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"ანა\",\n  \"surname\": \"თორია\",\n  \"gender\": \"Female\",\n  \"pin\": \"62001044866\",\n  \"birthDate\": \"2000-01-24\",\n  \"cityId\": 1,\n  \"image\":\"a95df78c-db6e-4e57-ac84-34c248f7e9f8temp.jpeg\",\n  \"phoneNumbers\": [\n    {\n        \"type\": \"Mobile\",\n        \"number\": \"577170753\"\n    },\n    {\n        \"type\": \"Home\",\n        \"number\": \"599855163\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePerson",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5184/api/person/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5184/api/report/relationships",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"report",
+						"relationships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connect Person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ka",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"personId\": 6,\n    \"personIdToConnectWith\" : 1,\n    \"relationshipType\": \"Familiar\"\n    //Relative Familiar Colleague\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/connect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"connect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disconnect Person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ka",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"personId\": 6,\n    \"personIdToRemoveConnectionWith\" : 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/person/disconnect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"person",
+						"disconnect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/anatoria/Desktop/temp.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5184/api/multimedia/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5184",
+					"path": [
+						"api",
+						"multimedia",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
